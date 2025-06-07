@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Enter Metaverse</title>
+  <style>
+    body {
+      font-family: serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    #enterBtn {
+      font-size: 16px;
+      padding: 8px 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Initial paragraph -->
+  <!-- Status Paragraph -->
   <p id="status">Enter the Metaverse</p>
 
-  <!-- Button to trigger change -->
+  <!-- Enter Button -->
   <button id="enterBtn">Enter</button>
 
   <script>
-    // Access button and paragraph
-    const btn = document.getElementById("enterBtn");
-    const para = document.getElementById("status");
+    const enterButton = document.getElementById("enterBtn");
+    const statusParagraph = document.getElementById("status");
 
-    btn.addEventListener("click", function () {
-      // Replace the <p> with <h1>
-      const h1 = document.createElement("h1");
-      h1.id = "status";
-      h1.textContent = "Entered Metaverse";
-
-      para.replaceWith(h1);
+    enterButton.addEventListener("click", () => {
+      // Replace the <p> with an <h1> but retain the same ID
+      const newHeading = document.createElement("h1");
+      newHeading.id = "status";
+      newHeading.textContent = "Entered Metaverse";
+      statusParagraph.replaceWith(newHeading);
     });
   </script>
-
 </body>
 </html>
