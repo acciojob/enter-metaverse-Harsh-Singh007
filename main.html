@@ -23,23 +23,23 @@
   </style>
 </head>
 <body>
-  <!-- Status Paragraph -->
-  <p id="status">Enter the Metaverse</p>
+
+  <!-- ✅ Keep #status as a wrapper -->
+  <div id="status">
+    <p>Enter the Metaverse</p>
+  </div>
 
   <!-- Enter Button -->
   <button id="enterBtn">Enter</button>
 
   <script>
     const enterButton = document.getElementById("enterBtn");
-    const statusParagraph = document.getElementById("status");
+    const statusDiv = document.getElementById("status");
 
     enterButton.addEventListener("click", () => {
-      // Replace the <p> with an <h1> but retain the same ID
-      const newHeading = document.createElement("h1");
-      newHeading.id = "status";
-      newHeading.textContent = "Entered Metaverse";
-      statusParagraph.replaceWith(newHeading);
+      statusDiv.innerHTML = "<h1>Entered Metaverse</h1>";
     });
   </script>
+
 </body>
 </html>
